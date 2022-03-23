@@ -30,8 +30,8 @@ source ~/.bashrc <br>
 <h3>ДЗ №4 (23.03.2022)</h3>
 <p>
 Данные для проверки:<br>
-testapp_IP = 51.250.5.10<br>
-testapp_port = 9292<br>
+testapp_IP = 51.250.5.10
+testapp_port = 9292
 </p>
 
 <h4>Скрипт запуска VM</h4>
