@@ -1,0 +1,8 @@
+{
+	"folder_id": "slj3lh234jbtest",
+	"service_account_key_file": "../../secrets/key.json",
+	"source_image_family": "ubuntu-1604-lts",
+	"instance_mem_gb" : "4",
+	"disk_size_gb": "20",
+	"image_name": "packer-image-kwazart-{{timestamp}}"
+}

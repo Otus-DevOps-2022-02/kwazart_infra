@@ -1,7 +1,7 @@
 # kwazart_infra
 kwazart Infra repository
 
-<h2>Самостоятельное задание</h2>
+<h3>Самостоятельное задание</h3>
 <b>
 Исследовать способ подключения к <code>someinternalhost</code> в одну
 команду из вашего рабочего устройства, проверить работоспособность
@@ -47,3 +47,26 @@ yc compute instance create \
   --zone ru-central1-a \
   --metadata-from-file=./setup.sh
 </code>
+
+<h2> ДЗ №5 (26.03.2022)</h3>
+<ul>
+	<li>Создана ветка <b>packer-base</b>, скрипты перенес в <b>config-scripts</b></li>
+	<li>Установлен <b>packer-base</b> (попутно приобрел vpn)</li>
+	<li>Создан сервисный аккаунт в <b>Yandex.Cloud</b>, выданы права</li>
+	<li>Создан IAM key</li>
+	<li>Создан файл <b>ubuntu16.json</b> в директории <b>packer</b></li>
+	<li>Файл заполнил в соответствии с инструкцией</li>
+	<li>Добавил свойство <code>"use_ipv4_nat": "true"</code></li>
+	<li>Переменные параметризированы в файле <b>variables.json</b></li>
+	<li>Создан образ командой: <code>packer build -var-file=./variables.json ./ubuntu16.json</code></li>
+	<li>Создана ВМ и установлен reddit: <br>
+		<code>
+		sudo apt-get update
+		sudo apt-get install -y git
+		git clone -b monolith https://github.com/express42/reddit.git
+		cd reddit && bundle install
+		puma -d
+		</code>
+	</li>
+	<li>Приложение развернуто по адресу: http://51.250.106.117:9292</li>
+</ul>
