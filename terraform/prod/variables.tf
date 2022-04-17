@@ -44,13 +44,3 @@ variable "db_disk_image" {
   description = "Disk image for reddit db"
   default     = "reddit-db-base"
 }
-
-variable "access_key" {
-  description = "Access key for object storage"
-  default     = "assess-key"
-}
-
-variable "secret_key" {
-  description = "Secret key for object storage"
-  default     = "secret_key"
-}

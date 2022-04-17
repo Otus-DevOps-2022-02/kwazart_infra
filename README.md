@@ -48,7 +48,7 @@ yc compute instance create \
   --metadata-from-file=./setup.sh
 </code>
 
-<h2> ДЗ №5 (26.03.2022)</h3>
+<h3> ДЗ №5 (26.03.2022)</h3>
 <ul>
 	<li>Создана ветка <b>packer-base</b>, скрипты перенес в <b>config-scripts</b></li>
 	<li>Установлен <b>packer-base</b> (попутно приобрел vpn)</li>
@@ -69,4 +69,24 @@ yc compute instance create \
 		</code>
 	</li>
 	<li>Приложение развернуто по адресу: http://51.250.106.117:9292</li>
+</ul>
+
+<h3> ДЗ №6 (08.04.2022)</h3>
+<ul>
+	<li>Создан инстанс через <b>terraform</b></li>
+	<li>Переменные подгружаются из файла <b>terraform.tfvars</b></li>
+	<li><code>ip</code> адреса выводятся после запуска инстансов</li>
+	<li>Создан дополнительный инстанс через <code>count</code></li>
+	<li>Создан балансировщик нагрузок - <b>51.250.80.136</b></li>
+	<li>Приложение развернуто по адресу: http://51.250.80.136/</li>
+</ul>
+
+<h3> ДЗ №7 (14.04.2022)</h3>
+<ul>
+	<li>Создано 2 <code>yc image</code> для <b>app</b> и <b>db</b></li>
+	<li>Настройки сети перенесены в <b>vpc.tf</b></li>
+	<li>Приложение разбито по модулям: <b>app</b> и <b>db</b></li>
+	<li>Создан 2 окружения <b>stage</b> и <b>prom</b></li>
+	<li><b>ip-address reddit-app</b>: <code>51.250.1.111</code></li>
+	<li><b>ip-address reddit-db</b>: <code>51.250.69.74</code></li>
 </ul>
