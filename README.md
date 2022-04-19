@@ -48,7 +48,7 @@ yc compute instance create \
   --metadata-from-file=./setup.sh
 </code>
 
-<h3> ДЗ №5 (26.03.2022)</h3>
+<h3> ДЗ №5 Packer (26.03.2022)</h3>
 <ul>
 	<li>Создана ветка <b>packer-base</b>, скрипты перенес в <b>config-scripts</b></li>
 	<li>Установлен <b>packer-base</b> (попутно приобрел vpn)</li>
@@ -71,7 +71,7 @@ yc compute instance create \
 	<li>Приложение развернуто по адресу: http://51.250.106.117:9292</li>
 </ul>
 
-<h3> ДЗ №6 (08.04.2022)</h3>
+<h3> ДЗ №6 Terragodrm-1(08.04.2022)</h3>
 <ul>
 	<li>Создан инстанс через <b>terraform</b></li>
 	<li>Переменные подгружаются из файла <b>terraform.tfvars</b></li>
@@ -81,7 +81,7 @@ yc compute instance create \
 	<li>Приложение развернуто по адресу: http://51.250.80.136/</li>
 </ul>
 
-<h3> ДЗ №7 (14.04.2022)</h3>
+<h3> ДЗ №7 Terraform-2 (14.04.2022)</h3>
 <ul>
 	<li>Создано 2 <code>yc image</code> для <b>app</b> и <b>db</b></li>
 	<li>Настройки сети перенесены в <b>vpc.tf</b></li>
@@ -90,3 +90,12 @@ yc compute instance create \
 	<li><b>ip-address reddit-app</b>: <code>51.250.1.111</code></li>
 	<li><b>ip-address reddit-db</b>: <code>51.250.69.74</code></li>
 </ul>
+
+<h3> ДЗ №8 Ansible-1 (17.04.2022)</h3>
+<ol>
+	<li>Установлен <b>ansible</b></li>
+	<li>Учетная запись >code>appuser</code> заменена на <code>ubuntu</code></li>
+	<li>На ВМ <b>redditapp</b> не оказалось git-клиента. Установил через <code>ansible app -m shell -a 'sudo apt update; sudo apt install git -y'</code></li>
+	<li>После клонирования репозитория из git, затем удаления через команду <code>ansible app -m command -a 'rm -rf ~/reddit'</code>, запустил клонирование с помощью <b>playbook</b>. Получил ожидаемый результат в виде уведомления об изменении состояния ВМ.</li>
+	<li>Попробовал сделать скрипт, который обращается в <b>yc</b> за наименованиями адресами инстансов </li>
+</ol>
